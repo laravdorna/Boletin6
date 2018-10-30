@@ -5,6 +5,8 @@
  */
 package boletin6_4;
 
+import javax.swing.JOptionPane;
+
 /**
  * 4-Coñecidos o nome e o peso de dúas persoas, queremos escribir os datos da
  * que pesa máis e, a diferenza de peso entre elas .
@@ -12,8 +14,12 @@ package boletin6_4;
  * @author lvazquezdorna
  */
 public class Persoa {
-private String nombe;
-private double peso;
+
+    private String nombe;
+    private double peso;
+
+    public Persoa() {
+    }
 
     public Persoa(String nombe, double peso) {
         this.nombe = nombe;
@@ -35,7 +41,8 @@ private double peso;
     public void setPeso(double peso) {
         this.peso = peso;
     }
-public void compararPeso(Persoa p1) {
+
+    public void compararPeso(Persoa p1) {
 
         if (p1.getPeso() > this.peso) {
             System.out.println(
@@ -52,8 +59,28 @@ public void compararPeso(Persoa p1) {
                     + (this.peso - p1.getPeso())
             );
         } else {
-            System.out.println("Las dos personas pesan lo mismo");   
+            System.out.println("Las dos personas pesan lo mismo");
         }
     }
 
+     public void compararPesoPanel(Persoa p1) {
+
+        if (p1.getPeso() > this.peso) {
+            JOptionPane.showMessageDialog(null,
+                    "La persona con mayor peso es " + p1.getNombe()
+                    + " con un peso de " + p1.getPeso()
+                    + "\nLa diferencia de peso entre ambos es de "
+                    + (p1.getPeso() - this.peso)
+            );
+        } else if (this.peso > p1.getPeso()) {
+           JOptionPane.showMessageDialog(null,
+                    "La persona con mayor peso es " + this.nombe
+                    + " con un peso de " + this.peso
+                    + "\nLa diferencia de peso entre ambos es de "
+                    + (this.peso - p1.getPeso())
+            );
+        } else {
+            JOptionPane.showMessageDialog(null,"Las dos personas pesan lo mismo");
+        }
+    }
 }
