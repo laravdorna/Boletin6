@@ -17,7 +17,18 @@ public class Boletin6_4 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        // crear objetos persona
+
+        Persoa pepe = new Persoa("Pepe", 54);
+        Persoa jose = new Persoa("jose", 73.50);
+        Persoa juana = new Persoa("juana",65.35);
+        Persoa abel = new Persoa("abel", 87.68);
+        
+      pepe.compararPeso(jose);
+      juana.compararPeso(abel);
+        
+
     }
 
+    
 }
