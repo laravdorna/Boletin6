@@ -18,10 +18,11 @@ import javax.swing.JOptionPane;
 public class Cuentas {
 
     public void operarNum() {
-        int num1,num2;
+       short num1,num2;
 
-        num1 = Integer.parseInt(JOptionPane.showInputDialog("teclea el primer operador: "));
-        num2 = Integer.parseInt(JOptionPane.showInputDialog("teclea el segundo operador: "));
+        num1 = Short.parseShort(JOptionPane.showInputDialog("teclea el primer operador: "));
+        
+        num2 = Short.parseShort(JOptionPane.showInputDialog("teclea el segundo operador: "));
           JOptionPane.showMessageDialog(null, ("SUMA: "+num1 +" + "+num2 +" = " +(num1+num2)));
         if (num1 >=num2) {
             JOptionPane.showMessageDialog(null, ("RESTA: "+num1 +" - "+num2 +" = " + (num1-num2)));
