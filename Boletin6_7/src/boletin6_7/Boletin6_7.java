@@ -7,8 +7,9 @@ No caso de premer unha opción que non teña o menú visualizar unha mensaxe de 
 3…. Circulo
 
  */
-
 package boletin6_7;
+
+import java.util.Scanner;
 
 /**
  *
@@ -20,7 +21,56 @@ public class Boletin6_7 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Scanner teclado = new Scanner(System.in);
+
+        //Inicializar objetos
+        Areas area = new Areas();
+
+        //bandera
+        System.out.println("Bienvenido a la calculadora de superficies."
+                + " que operación desea realizar:");
+
+        int opcion;
+        do {
+            opcion = menu();
+            switch (opcion) {
+                case 1:
+                    //cuadrado
+                    area.calcularAreaCuadrado();
+                    break;
+                case 2:
+                    //rectangulo
+                    area.calcularAreaRectangulo();
+                    break;
+                case 3:
+                    //triangulo
+                    area.calcularAreaTriangulo();
+                    break;
+                case 4:
+                    //circulo
+                    area.calcularAreaCirculo();
+                    break;
+                case 0:
+                    System.out.println("\n\t Gracias por usar la calculadora.");
+                    break;
+                default:
+                    System.out.println("La operación elegida no existe.");
+                    break;
+            }
+        } while (opcion != 0);
+
+    }
+
+    private static int menu() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("\nQue operación desea realizar:"
+                + "\n1=>Area del cuadrado"
+                + "\n2=>Area del rectangulo"
+                + "\n3=>Area del triangulo"
+                + "\n4=>Area del circulo"
+                + "\n0=>Salir");
+
+        return Integer.parseInt(teclado.nextLine());
     }
 
 }
